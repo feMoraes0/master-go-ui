@@ -42,6 +42,10 @@ class _OnboardingState extends State<Onboarding> {
     });
   }
 
+  void goSignIn() {
+    print('changing screen');
+  }
+
   @override
   Widget build(BuildContext context) {
     Size screen = MediaQuery.of(context).size;
@@ -158,10 +162,25 @@ class _OnboardingState extends State<Onboarding> {
               SizedBox(
                 height: screen.height * 0.0381,
               ),
+              (this.index != 3) ?
               Container(
                 padding: EdgeInsets.symmetric(horizontal: screen.width * 0.08),
                 child: CustomButton(
                   onTap: nextPage,
+                ),
+              ) :
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: screen.width * 0.08),
+                child: CustomButton(
+                  onTap: goSignIn,
+                  height: 82.0,
+                  width: 82.0,
+                  radius: 90.0,
+                  child: Icon(
+                    Icons.add,
+                    size: 40.0,
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ],
