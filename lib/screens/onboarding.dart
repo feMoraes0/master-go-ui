@@ -3,6 +3,8 @@ import 'package:flutter/painting.dart';
 import 'package:mastergo/components/custom_button.dart';
 
 class Onboarding extends StatefulWidget {
+  static String routeName = "/onboarding";
+
   @override
   _OnboardingState createState() => _OnboardingState();
 }
@@ -34,7 +36,7 @@ class _OnboardingState extends State<Onboarding> {
 
   void nextPage() {
     setState(() {
-      if( index + 1 < 4 ) {
+      if (index + 1 < 4) {
         setState(() {
           index += 1;
         });
@@ -66,7 +68,8 @@ class _OnboardingState extends State<Onboarding> {
               ),
               Container(
                 margin: EdgeInsets.symmetric(horizontal: screen.width * 0.1333),
-                padding: EdgeInsets.symmetric(horizontal: screen.width * 0.0933),
+                padding:
+                    EdgeInsets.symmetric(horizontal: screen.width * 0.0933),
                 child: Text(
                   data[index]['title'],
                   textAlign: TextAlign.center,
@@ -75,15 +78,15 @@ class _OnboardingState extends State<Onboarding> {
                       fontWeight: FontWeight.w500,
                       fontSize: 40,
                       height: 46.0 / 40.0,
-                      color: Color(0xFF525464)
-                  ),
+                      color: Color(0xFF525464)),
                 ),
               ),
               SizedBox(
                 height: screen.height * 0.0837,
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: screen.width * 0.1813),
+                padding:
+                    EdgeInsets.symmetric(horizontal: screen.width * 0.1813),
                 child: Image(
                   image: AssetImage(data[index]['image']),
                   width: screen.width * 0.6346,
@@ -94,7 +97,8 @@ class _OnboardingState extends State<Onboarding> {
                 height: screen.height * 0.0820,
               ),
               Container(
-                padding: EdgeInsets.symmetric(horizontal: screen.width * 0.1626),
+                padding:
+                    EdgeInsets.symmetric(horizontal: screen.width * 0.1626),
                 child: Text(
                   data[index]['subtitle'],
                   textAlign: TextAlign.center,
@@ -119,9 +123,10 @@ class _OnboardingState extends State<Onboarding> {
                       height: 8.0,
                       width: (this.index == 0) ? 17.0 : 8.0,
                       decoration: BoxDecoration(
-                          color: (this.index == 0) ? Color(0xFFB5C3C7) : Color(0xFFCBD3D5),
-                        borderRadius: BorderRadius.circular(90.0)
-                      ),
+                          color: (this.index == 0)
+                              ? Color(0xFFB5C3C7)
+                              : Color(0xFFCBD3D5),
+                          borderRadius: BorderRadius.circular(90.0)),
                     ),
                     SizedBox(
                       width: 10.0,
@@ -130,9 +135,10 @@ class _OnboardingState extends State<Onboarding> {
                       height: 8.0,
                       width: (this.index == 1) ? 17.0 : 8.0,
                       decoration: BoxDecoration(
-                          color: (this.index == 1) ? Color(0xFFB5C3C7) : Color(0xFFCBD3D5),
-                          borderRadius: BorderRadius.circular(90.0)
-                      ),
+                          color: (this.index == 1)
+                              ? Color(0xFFB5C3C7)
+                              : Color(0xFFCBD3D5),
+                          borderRadius: BorderRadius.circular(90.0)),
                     ),
                     SizedBox(
                       width: 10.0,
@@ -141,9 +147,10 @@ class _OnboardingState extends State<Onboarding> {
                       height: 8.0,
                       width: (this.index == 2) ? 17.0 : 8.0,
                       decoration: BoxDecoration(
-                          color: (this.index == 2) ? Color(0xFFB5C3C7) : Color(0xFFCBD3D5),
-                          borderRadius: BorderRadius.circular(90.0)
-                      ),
+                          color: (this.index == 2)
+                              ? Color(0xFFB5C3C7)
+                              : Color(0xFFCBD3D5),
+                          borderRadius: BorderRadius.circular(90.0)),
                     ),
                     SizedBox(
                       width: 10.0,
@@ -152,9 +159,10 @@ class _OnboardingState extends State<Onboarding> {
                       height: 8.0,
                       width: (this.index == 3) ? 17.0 : 8.0,
                       decoration: BoxDecoration(
-                          color: (this.index == 3) ? Color(0xFFB5C3C7) : Color(0xFFCBD3D5),
-                          borderRadius: BorderRadius.circular(90.0)
-                      ),
+                          color: (this.index == 3)
+                              ? Color(0xFFB5C3C7)
+                              : Color(0xFFCBD3D5),
+                          borderRadius: BorderRadius.circular(90.0)),
                     ),
                   ],
                 ),
@@ -162,27 +170,29 @@ class _OnboardingState extends State<Onboarding> {
               SizedBox(
                 height: screen.height * 0.0381,
               ),
-              (this.index != 3) ?
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: screen.width * 0.08),
-                child: CustomButton(
-                  onTap: nextPage,
-                ),
-              ) :
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: screen.width * 0.08),
-                child: CustomButton(
-                  onTap: goSignIn,
-                  height: 82.0,
-                  width: 82.0,
-                  radius: 90.0,
-                  child: Icon(
-                    Icons.add,
-                    size: 40.0,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
+              (this.index != 3)
+                  ? Container(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: screen.width * 0.08),
+                      child: CustomButton(
+                        onTap: nextPage,
+                      ),
+                    )
+                  : Container(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: screen.width * 0.08),
+                      child: CustomButton(
+                        onTap: goSignIn,
+                        height: 82.0,
+                        width: 82.0,
+                        radius: 90.0,
+                        child: Icon(
+                          Icons.add,
+                          size: 40.0,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
             ],
           ),
         ),

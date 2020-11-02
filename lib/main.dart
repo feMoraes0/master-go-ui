@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mastergo/screens/onboarding.dart';
+import 'package:mastergo/screens/login.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,7 +16,11 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Onboarding(),
+      routes: {
+        Onboarding.routeName: (context) => Onboarding(),
+        Login.routeName: (context) => Login(),
+      },
+      initialRoute: Onboarding.routeName,
     );
   }
 }
