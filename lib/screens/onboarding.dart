@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:mastergo/components/custom_button.dart';
+import 'package:mastergo/screens/login.dart';
 
 class Onboarding extends StatefulWidget {
   static String routeName = "/onboarding";
@@ -44,8 +45,8 @@ class _OnboardingState extends State<Onboarding> {
     });
   }
 
-  void goSignIn() {
-    print('changing screen');
+  void goSignIn(context) {
+    Navigator.pushNamed(context, Login.routeName);
   }
 
   @override
@@ -182,7 +183,7 @@ class _OnboardingState extends State<Onboarding> {
                       padding:
                           EdgeInsets.symmetric(horizontal: screen.width * 0.08),
                       child: CustomButton(
-                        onTap: goSignIn,
+                        onTap: () => this.goSignIn(context),
                         height: 82.0,
                         width: 82.0,
                         radius: 90.0,
